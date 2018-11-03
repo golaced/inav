@@ -69,6 +69,7 @@ COMMON_SRC = \
             fc/settings.c \
             fc/stats.c \
             flight/failsafe.c \
+            flight/flock.c \
             flight/hil.c \
             flight/imu.c \
             flight/mixer.c \

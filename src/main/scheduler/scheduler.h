@@ -110,6 +110,9 @@ typedef enum {
 #ifdef USE_VTX_CONTROL
     TASK_VTXCTRL,
 #endif
+#ifdef USE_FLOCK
+    TASK_FLOCK,
+#endif
 
     /* Count of real tasks */
     TASK_COUNT,

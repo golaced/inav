@@ -80,6 +80,9 @@
 // Allow default optic flow boards
 #define USE_OPFLOW_CXOF
 #define USE_OPFLOW_MSP
+
+#define USE_FLOCK
+
 #endif
 
 #if (FLASH_SIZE > 128)

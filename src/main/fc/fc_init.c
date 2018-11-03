@@ -84,6 +84,7 @@
 #include "fc/runtime_config.h"
 
 #include "flight/failsafe.h"
+#include "flight/flock.h"
 #include "flight/imu.h"
 #include "flight/mixer.h"
 #include "flight/pid.h"
@@ -668,6 +669,10 @@ void init(void)
 #ifdef USE_RCDEVICE
     rcdeviceInit();
 #endif // USE_RCDEVICE
+
+#ifdef USE_FLOCK
+    flockInit();
+#endif
 
     // Latch active features AGAIN since some may be modified by init().
     latchActiveFeatures();

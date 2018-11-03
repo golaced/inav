@@ -41,6 +41,7 @@
 #include "fc/rc_controls.h"
 #include "fc/runtime_config.h"
 
+#include "flight/flock.h"
 #include "flight/imu.h"
 #include "flight/mixer.h"
 #include "flight/pid.h"
@@ -537,6 +538,15 @@ cfTask_t cfTasks[TASK_COUNT] = {
         .taskFunc = vtxUpdate,
         .desiredPeriod = TASK_PERIOD_HZ(5),          // 5Hz @200msec
         .staticPriority = TASK_PRIORITY_IDLE,
+    },
+#endif
+
+#ifdef USE_FLOCK
+    [TASK_FLOCK] = {
+        .taskName = "FLOCK",
+        .taskFunc = flockUpdate,
+        .desiredPeriod = TASK_PERIOD_HZ(10),
+        .staticPriority = TASK_PRIORITY_LOW,
     },
 #endif
 };
